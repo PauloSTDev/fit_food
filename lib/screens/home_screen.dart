@@ -45,33 +45,79 @@ class _MyHomePageState extends State<MyHomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextButton.icon(
-                            onPressed: () {},
-                            icon: Icon(Icons.account_circle),
-                            label: Text("Perfil"),
+                          onPressed: () {},
+                          icon: const Icon(Icons.account_circle),
+                          label: const Text(
+                            "Perfil",
+                            style: TextStyle(color: Colors.black, fontSize: 19),
+                          ),
                         ),
-                        SizedBox(height: 10,),
+                        const SizedBox(
+                          height: 14,
+                        ),
                         TextButton.icon(
                           onPressed: () {},
-                          icon: Icon(Icons.favorite),
-                          label: Text("Favoritos"),
+                          icon: const Icon(Icons.favorite),
+                          label: const Text("Favoritos",
+                              style: TextStyle(color: Colors.black, fontSize: 19)),
                         ),
-                        SizedBox(height: 10,),
+                        const SizedBox(
+                          height: 14,
+                        ),
                         TextButton.icon(
                           onPressed: () {},
-                          icon: Icon(Icons.explore),
-                          label: Text("Explorar"),
+                          icon: const Icon(Icons.explore),
+                          label: const Text("Explorar",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 19)),
                         ),
-                        SizedBox(height: 10,),
+                        const SizedBox(
+                          height: 14,
+                        ),
                         TextButton.icon(
                           onPressed: () {},
-                          icon: Icon(Icons.settings),
-                          label: Text("Configurações"),
+                          icon: const Icon(Icons.settings),
+                          label: const Text("Configurações",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 19)),
                         ),
                       ],
                     ),
                   ),
                 ),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Fit Food",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 2.0,
+                        ),
+                      ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(top: 200),
+              width: 200,
+              height: 120,
+              decoration: BoxDecoration(
+                  color: Colors.green,
+                  image: const DecorationImage(
+                      image: AssetImage("assets/images/fit_food.jpg"),
+                      fit: BoxFit.cover,
+                  ),
+                borderRadius: BorderRadius.circular(200),
+              ),
             ),
           ],
         ),
