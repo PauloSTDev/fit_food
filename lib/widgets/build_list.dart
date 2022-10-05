@@ -10,13 +10,26 @@ class BuildList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 200,
-        height: 100,
-        decoration: BoxDecoration(
-          color: Colors.black12,
-          borderRadius: BorderRadius.circular(10),
+      width: 250,
+      height: 200,
+      decoration: BoxDecoration(
+        color: Colors.black12,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.black12)
+      ),
+      child: Expanded(
+        child: Column(
+          children: [
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
-        child: Expanded(child: Text(label))
+      ),
     );
   }
 }

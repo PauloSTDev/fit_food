@@ -152,17 +152,47 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("Alimentos",
+              style: TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.bold,
+            ),),
+          ),
           SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             child: Row(
               children: const [
-                BuildList(label: "Assunto 1", text: "Alguma coisa"),
+                BuildList(label: "Frutas", text: "Alguma coisa"),
                 SizedBox(width: 10),
-                BuildList(label: "Assunto 2", text: "Alguma coisa"),
+                BuildList(label: "Legumes", text: "Alguma coisa"),
                 SizedBox(width: 10),
-                BuildList(label: "Assunto 3", text: "Alguma coisa"),
+                BuildList(label: "Saladas", text: "Alguma coisa"),
                 SizedBox(width: 10),
-                BuildList(label: "Assunto 4", text: "Alguma coisa"),
+                BuildList(label: "Vegetais", text: "Alguma coisa"),
+              ],
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("Biotipos",
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+              ),),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: BouncingScrollPhysics(),
+            child: Row(
+              children: const [
+                BuildList(label: "Ectomorfo", text: "Alguma coisa"),
+                SizedBox(width: 10),
+                BuildList(label: "Endomorfo", text: "Alguma coisa"),
+                SizedBox(width: 10),
+                BuildList(label: "Mesomorfo", text: "Alguma coisa"),
               ],
             ),
           ),
