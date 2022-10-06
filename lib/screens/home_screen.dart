@@ -1,4 +1,5 @@
 import 'package:fit_food/widgets/build_list.dart';
+import 'package:fit_food/widgets/build_scrollbar.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -154,46 +155,81 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text("Alimentos",
+            child: Text(
+              "Alimentos",
               style: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
-            ),),
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            child: Row(
-              children: const [
-                BuildList(label: "Frutas", text: "Alguma coisa"),
-                SizedBox(width: 10),
-                BuildList(label: "Legumes", text: "Alguma coisa"),
-                SizedBox(width: 10),
-                BuildList(label: "Saladas", text: "Alguma coisa"),
-                SizedBox(width: 10),
-                BuildList(label: "Vegetais", text: "Alguma coisa"),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: const [
+                  BuildList(label: "Frutas", text: "Alguma coisa"),
+                  SizedBox(width: 10),
+                  BuildList(label: "Legumes", text: "Alguma coisa"),
+                  SizedBox(width: 10),
+                  BuildList(label: "Saladas", text: "Alguma coisa"),
+                  SizedBox(width: 10),
+                  BuildList(label: "Vegetais", text: "Alguma coisa"),
+                ],
+              ),
             ),
           ),
           const Padding(
             padding: EdgeInsets.all(8.0),
-            child: Text("Biotipos",
+            child: Text(
+              "Biotipos",
               style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
-              ),),
+              ),
+            ),
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             physics: BouncingScrollPhysics(),
-            child: Row(
-              children: const [
-                BuildList(label: "Ectomorfo", text: "Alguma coisa"),
-                SizedBox(width: 10),
-                BuildList(label: "Endomorfo", text: "Alguma coisa"),
-                SizedBox(width: 10),
-                BuildList(label: "Mesomorfo", text: "Alguma coisa"),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: const [
+                  BuildList(label: "Ectomorfo", text: "Alguma coisa"),
+                  SizedBox(width: 10),
+                  BuildList(label: "Endomorfo", text: "Alguma coisa"),
+                  SizedBox(width: 10),
+                  BuildList(label: "Mesomorfo", text: "Alguma coisa"),
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                  children: const [
+                    Text("Teste"),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    BuildScrollBar(label: "Teste 1"),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    BuildScrollBar(label: "Teste 2"),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    BuildScrollBar(label: "Teste 3"),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    BuildScrollBar(label: "Teste 4"),
+                  ],
+                ),
             ),
           ),
         ],
