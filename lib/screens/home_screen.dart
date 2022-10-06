@@ -193,7 +193,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Row(
@@ -208,29 +208,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                  children: const [
-                    Text("Teste"),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    BuildScrollBar(label: "Teste 1"),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    BuildScrollBar(label: "Teste 2"),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    BuildScrollBar(label: "Teste 3"),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    BuildScrollBar(label: "Teste 4"),
-                  ],
-                ),
-            ),
+            child: ListView.builder(
+                itemCount: 15,
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: BuildScrollBar(label: "Teste ${index}"),
+                    )),
           ),
         ],
       ),

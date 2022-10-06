@@ -10,14 +10,13 @@ class BuildScrollBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 300,
-      height: 50,
+      height: 100,
       decoration: BoxDecoration(
           color: Colors.green,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.black12)
       ),
-      child: Expanded(
-        child: Column(
+      child: Column(
           children: [
             Text(
               label,
@@ -28,7 +27,6 @@ class BuildScrollBar extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }
