@@ -133,91 +133,52 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(width: 15),
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Center(
-              child: Container(
-                padding: const EdgeInsets.only(top: 200),
-                width: 200,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  image: const DecorationImage(
-                    image: AssetImage("assets/images/fit_food.jpg"),
-                    fit: BoxFit.cover,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Center(
+                child: Container(
+                  padding: const EdgeInsets.only(top: 200),
+                  width: 200,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    image: const DecorationImage(
+                      image: AssetImage("assets/images/fit_food.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(200),
                   ),
-                  borderRadius: BorderRadius.circular(200),
                 ),
               ),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              "Alimentos",
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-              ),
+            Text("Alimentos"),
+            SizedBox(
+              height: 200,
+              child: ListView.builder(
+                itemCount: 10,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => BuildList(label: "Alimentos ${index}", text: "Alguma coisa"),),
             ),
-          ),
-          SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: const [
-                  BuildList(label: "Frutas", text: "Alguma coisa"),
-                  SizedBox(width: 10),
-                  BuildList(label: "Legumes", text: "Alguma coisa"),
-                  SizedBox(width: 10),
-                  BuildList(label: "Saladas", text: "Alguma coisa"),
-                  SizedBox(width: 10),
-                  BuildList(label: "Vegetais", text: "Alguma coisa"),
-                ],
-              ),
+            Text("Biotipos"),
+            SizedBox(
+              height: 200,
+              child: ListView.builder(
+                itemCount: 10,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => BuildList(label: "Biotipos ${index}", text: "Alguma coisa"),),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              "Biotipos",
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                children: const [
-                  BuildList(label: "Ectomorfo", text: "Alguma coisa"),
-                  SizedBox(width: 10),
-                  BuildList(label: "Endomorfo", text: "Alguma coisa"),
-                  SizedBox(width: 10),
-                  BuildList(label: "Mesomorfo", text: "Alguma coisa"),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            child: ListView.builder(
-                itemCount: 15,
-                shrinkWrap: true,
-                physics: const BouncingScrollPhysics(),
-                itemBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: BuildScrollBar(label: "Teste ${index}"),
-                    )),
-          ),
-        ],
+            Flexible(
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: 10,
+                  itemBuilder: (context, index) => BuildList(label: "Algo ${index}", text: "Aham"),))
+          ],
+        ),
       ),
     );
   }
