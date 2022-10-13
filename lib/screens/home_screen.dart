@@ -154,23 +154,34 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            Text("Alimentos"),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text("Alimentos", style: TextStyle(color: Colors.black, fontSize: 19, fontWeight: FontWeight.bold),),
+            ),
             SizedBox(
               height: 200,
               child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                 itemCount: 10,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => BuildList(label: "Alimentos ${index}", text: "Alguma coisa"),),
             ),
-            Text("Biotipos"),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text("Biotipos", style: TextStyle(color: Colors.black, fontSize: 19, fontWeight: FontWeight.bold),),
+            ),
             SizedBox(
               height: 200,
               child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                 itemCount: 10,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => BuildList(label: "Biotipos ${index}", text: "Alguma coisa"),),
             ),
-            Text("Dietas"),
+            const Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text("Dietas", style: TextStyle(color: Colors.black, fontSize: 19, fontWeight: FontWeight.bold),),
+            ),
             ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
