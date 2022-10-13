@@ -1,5 +1,4 @@
 import 'package:fit_food/widgets/build_list.dart';
-import 'package:fit_food/widgets/build_scrollbar.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -171,12 +170,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => BuildList(label: "Biotipos ${index}", text: "Alguma coisa"),),
             ),
-            Flexible(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: 10,
-                  itemBuilder: (context, index) => BuildList(label: "Algo ${index}", text: "Aham"),))
+            Text("Dietas"),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: 10,
+              itemBuilder: (context, index) => BuildList(label: "Algo ${index}", text: "Aham"),)
           ],
         ),
       ),
